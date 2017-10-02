@@ -6,15 +6,9 @@ android {
 
     defaultConfig {
         minSdkVersion 15
-        targetSdkVersion 25
+        targetSdkVersion rootProject.ext.compileSdkVersion
         versionCode 1
         versionName "0.1"
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-        }
     }
 
     dataBinding {

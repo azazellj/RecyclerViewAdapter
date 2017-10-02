@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "com.azazellj.baservadapter"
         minSdkVersion 15
-        targetSdkVersion 25
+        targetSdkVersion rootProject.ext.compileSdkVersion
         versionCode 1
         versionName "1.0"
     }
@@ -15,18 +15,13 @@ android {
     dataBinding {
         enabled = true
     }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-        }
-    }
 }
 
 dependencies {
-    compile project(':adapter-binding')
-
     compile "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
+
+    compile project(':adapter')
+    compile project(':adapter-binding')
 
     compile 'com.github.bumptech.glide:glide:3.7.0'
 }

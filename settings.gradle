@@ -1,1 +1,10 @@
-include ':app', ':adapter', ':adapter-binding'
+include 'adapter'
+include 'adapter-binding'
+include 'sample'
+
+ext {
+    compileSdkVersion = 25
+    buildToolsVersion = "25.0.0"
+
+    supportLibVersion = "25.0.0"
+}
