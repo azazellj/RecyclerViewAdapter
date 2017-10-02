@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="animal"
+            type="com.azazellj.baservadapter.model.Animal" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/image_animal_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:padding="16dp"
+            app:imageUrl="@{animal.imageURL}"
+            tools:src="@mipmap/ic_launcher" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/text_animal_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="16dp"
+            android:text="@{animal.name}"
+            android:textColor="?attr/titleTextColor"
+            tools:text="@string/app_name" />
+    </LinearLayout>
+</layout>
