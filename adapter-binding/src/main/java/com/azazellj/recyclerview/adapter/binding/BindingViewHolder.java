@@ -1,4 +1,4 @@
-package com.azazellj.adapter.binding;
+package com.azazellj.recyclerview.adapter.binding;
 
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
@@ -9,7 +9,7 @@ import android.view.View;
  */
 
 public class BindingViewHolder
-        extends com.azazellj.rv.adapter.common.AdapterViewHolder {
+        extends com.azazellj.recyclerview.adapter.common.AdapterViewHolder {
     /**
      * Default constructor.
      *

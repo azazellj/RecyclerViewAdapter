@@ -5,11 +5,11 @@ import android.databinding.ViewDataBinding;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import com.azazellj.adapter.binding.BindingViewHolder;
+import com.azazellj.recyclerview.adapter.binding.BindingViewHolder;
 import com.azazellj.baservadapter.BR;
 import com.azazellj.baservadapter.R;
 import com.azazellj.baservadapter.model.Animal;
-import com.azazellj.rv.adapter.BaseAdapter;
+import com.azazellj.recyclerview.adapter.BaseAdapter;
 
 /**
  * Created by azazellj on 10/2/17.
