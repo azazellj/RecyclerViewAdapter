@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import com.azazellj.recyclerview.adapter.common.AdapterViewHolder;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -27,7 +28,7 @@ public abstract class BaseAdapter<E, VH extends AdapterViewHolder>
      * Base container.
      */
     @NonNull
-    private List<E> mList = Collections.emptyList();
+    private List<E> mList = new ArrayList<>();
 
     /**
      * Default constructor.
