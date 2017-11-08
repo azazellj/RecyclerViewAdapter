@@ -1,15 +1,12 @@
 package com.azazellj.baservadapter.ui.main;
 
-import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
-import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import com.azazellj.recyclerview.adapter.binding.BindingViewHolder;
 import com.azazellj.baservadapter.BR;
 import com.azazellj.baservadapter.R;
 import com.azazellj.baservadapter.model.Animal;
 import com.azazellj.recyclerview.adapter.BaseAdapter;
+import com.azazellj.recyclerview.adapter.binding.BindingViewHolder;
 
 /**
  * Created by azazellj on 10/2/17.
@@ -20,12 +17,7 @@ public class AnimalsAdapter
 
     @Override
     public BindingViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-
-        ViewDataBinding binding = DataBindingUtil
-                .inflate(inflater, R.layout.item_animal, parent, false);
-
-        return new BindingViewHolder(binding.getRoot());
+        return new BindingViewHolder(parent, R.layout.item_animal);
     }
 
     @Override
