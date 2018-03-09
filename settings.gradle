@@ -1,10 +1,7 @@
 include 'adapter'
+include 'adapter-kt'
 include 'adapter-binding'
+include 'adapter-binding-kt'
+include 'adapter-butterknife'
+include 'adapter-butterknife-kt'
 include 'sample'
-
-ext {
-    compileSdkVersion = 25
-    buildToolsVersion = "25.0.0"
-
-    supportLibVersion = "25.0.0"
-}

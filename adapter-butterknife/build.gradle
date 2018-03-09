@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-group = 'com.github.Azazellj'
 
 android {
     buildToolsVersion rootProject.ext.buildToolsVersion
@@ -9,13 +8,11 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.compileSdkVersion
     }
-
-    dataBinding {
-        enabled = true
-    }
 }
 
 dependencies {
-//    implementation "com.android.support:recyclerview-v7:$supportLibVersion"
     api project(':adapter')
+//    implementation "com.android.support:recyclerview-v7:$supportLibVersion"
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }

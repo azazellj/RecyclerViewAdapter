@@ -6,10 +6,9 @@ android {
 
     defaultConfig {
         applicationId "com.azazellj.baservadapter"
-        minSdkVersion 15
+        minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.compileSdkVersion
-        versionCode 1
-        versionName "1.0"
+//        multiDexEnabled true
     }
 
     dataBinding {
@@ -17,15 +16,18 @@ android {
     }
 
     lintOptions {
-        abortOnError false
+        abortOnError true
     }
 }
 
 dependencies {
-    compile "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
-
-    compile project(':adapter')
-    compile project(':adapter-binding')
-
-    compile 'com.github.bumptech.glide:glide:3.7.0'
+    implementation project(':adapter')
+    implementation project(':adapter-kt')
+    implementation project(':adapter-binding')
+    implementation project(':adapter-binding-kt')
+    implementation project(':adapter-butterknife')
+    implementation project(':adapter-butterknife-kt')
+    implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
+//    implementation "com.android.support:support-v4:${rootProject.ext.supportLibVersion}"
+    implementation 'com.github.bumptech.glide:glide:3.8.0'
 }
