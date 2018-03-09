@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'kotlin-android'
 group = 'com.github.Azazellj'
 
@@ -19,7 +20,8 @@ android {
 }
 
 dependencies {
-//    implementation "com.android.support:recyclerview-v7:$supportLibVersion"
     api project(':adapter-kt')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
+
+apply from: 'https://raw.githubusercontent.com/Commit451/gradle-android-javadocs/1.0.0/gradle-android-javadocs.gradle'

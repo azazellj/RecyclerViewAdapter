@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 group = 'com.github.Azazellj'
@@ -15,8 +16,9 @@ android {
 
 dependencies {
     api project(':adapter-kt')
-//    implementation "com.android.support:recyclerview-v7:$supportLibVersion"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.jakewharton:butterknife:8.8.1'
     kapt 'com.jakewharton:butterknife-compiler:8.8.1'
 }
+
+apply from: 'https://raw.githubusercontent.com/Commit451/gradle-android-javadocs/1.0.0/gradle-android-javadocs.gradle'
