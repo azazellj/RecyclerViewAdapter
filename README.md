@@ -21,11 +21,11 @@ Current las t version is `0.4.1`
 
 ```groovy
 dependencies {
-    implementation 'com.github.Azazellj:adapter-binding-kt:${lastVersion}'         // databinding + kotlin
-    implementation 'com.github.Azazellj:adapter-binding:${lastVersion}'             // databinging only
+    implementation 'com.github.Azazellj:adapter-binding-kt:${lastVersion}'        // databinding + kotlin
+    implementation 'com.github.Azazellj:adapter-binding:${lastVersion}'           // databinging only
     implementation 'com.github.Azazellj:adapter-butterknife-kt:${lastVersion}'    // butterknife + kotlin
-    implementation 'com.github.Azazellj:adapter-butterknife:${lastVersion}'        // butterknife only
-    implementation 'com.github.Azazellj:adapter-kt:${lastVersion}'                      // only adapter and holder + kotlin
-    implementation 'com.github.Azazellj:adapter:${lastVersion}'                          // only adapter and holder
+    implementation 'com.github.Azazellj:adapter-butterknife:${lastVersion}'       // butterknife only
+    implementation 'com.github.Azazellj:adapter-kt:${lastVersion}'                // only adapter and holder + kotlin
+    implementation 'com.github.Azazellj:adapter:${lastVersion}'                   // only adapter and holder
 }
 ```
