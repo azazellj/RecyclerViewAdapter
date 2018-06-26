@@ -4,7 +4,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
-
 import com.azazellj.recyclerview.adapter.common.AdapterViewHolder;
 
 import java.util.ArrayList;
@@ -150,14 +149,12 @@ public abstract class BaseAdapter<E, VH extends AdapterViewHolder>
      * @param items new collection
      */
     public void setItems(@Nullable List<E> items) {
-        if (items != null) {
-            clear();
-        } else {
+        if (items == null) {
             items = Collections.emptyList();
         }
 
         this.mList = items;
-        notifyItemRangeInserted(0, getItemCount());
+        notifyDataSetChanged();
     }
 
     /**

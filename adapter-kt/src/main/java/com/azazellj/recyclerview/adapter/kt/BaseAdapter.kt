@@ -135,10 +135,8 @@ abstract class BaseAdapter<E : Any, VH : AdapterViewHolder> : RecyclerView.Adapt
      * @param items new collection
      */
     fun setItems(@Nullable items: MutableList<E>?) {
-        clear()
-
         mList = items ?: mutableListOf()
-        notifyItemRangeInserted(0, itemCount)
+        notifyDataSetChanged()
     }
 
     /**
