@@ -96,8 +96,8 @@ abstract class BaseAdapter<E : Any, VH : AdapterViewHolder> : RecyclerView.Adapt
      * Remove all items.
      */
     fun clear() {
-        notifyItemRangeChanged(0, itemCount)
         mList.clear()
+        notifyDataSetChanged()
     }
 
     /**

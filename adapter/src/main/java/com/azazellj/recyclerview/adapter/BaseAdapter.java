@@ -110,8 +110,8 @@ public abstract class BaseAdapter<E, VH extends AdapterViewHolder>
      * Remove all items.
      */
     public void clear() {
-        notifyItemRangeRemoved(0, getItemCount());
         mList.clear();
+        notifyDataSetChanged();
     }
 
     /**
