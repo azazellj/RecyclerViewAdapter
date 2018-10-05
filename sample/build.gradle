@@ -27,5 +27,6 @@ dependencies {
     implementation project(':adapter-butterknife')
     implementation project(':adapter-butterknife-kt')
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
+    implementation "com.android.support:recyclerview-v7:$supportLibVersion"
     implementation 'com.github.bumptech.glide:glide:4.7.1'
 }

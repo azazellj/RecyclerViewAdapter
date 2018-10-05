@@ -3,9 +3,9 @@ package com.azazellj.baservadapter.databinding;
 import android.databinding.BindingAdapter;
 import android.util.Log;
 import android.widget.ImageView;
-
 import com.azazellj.baservadapter.BuildConfig;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 /**
  * Created by azazellj on 8/8/16.
@@ -36,11 +36,12 @@ public class BindingAdapters {
 
         Glide.with(imageView.getContext())
                 .load(finalImageUrl)
-                .placeholder(android.R.drawable.gallery_thumb)
-                .error(android.R.drawable.stat_notify_error)
-                .dontTransform()
-                .crossFade()
-                .dontAnimate()
+                .apply(RequestOptions
+                        .placeholderOf(android.R.drawable.gallery_thumb)
+                        .error(android.R.drawable.stat_notify_error)
+                        .dontTransform()
+                        .dontAnimate()
+                )
                 .into(imageView);
     }
 }

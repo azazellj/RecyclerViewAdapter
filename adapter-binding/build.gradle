@@ -16,7 +16,10 @@ android {
 }
 
 dependencies {
-    api project(':adapter')
+    implementation project(':adapter')
+
+    implementation "com.android.support:recyclerview-v7:$supportLibVersion"
+    implementation "com.android.support:support-v4:${rootProject.ext.supportLibVersion}"
 }
 
 apply from: 'https://raw.githubusercontent.com/Commit451/gradle-android-javadocs/1.0.0/gradle-android-javadocs.gradle'

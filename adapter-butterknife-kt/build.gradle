@@ -14,9 +14,13 @@ android {
 }
 
 dependencies {
-    api project(':adapter-kt')
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation project(':adapter-kt')
+
+    implementation "com.android.support:recyclerview-v7:$supportLibVersion"
     implementation 'com.jakewharton:butterknife:8.8.1'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
     kapt 'com.jakewharton:butterknife-compiler:8.8.1'
 }
 

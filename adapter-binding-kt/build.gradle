@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 group = 'com.github.Azazellj'
 
 android {
@@ -19,8 +20,14 @@ android {
 }
 
 dependencies {
-    api project(':adapter-kt')
+    implementation project(':adapter-kt')
+
+    implementation "com.android.support:recyclerview-v7:$supportLibVersion"
+    implementation "com.android.support:support-v4:${rootProject.ext.supportLibVersion}"
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    kapt "androidx.databinding:databinding-compiler:3.2.0"
 }
 
 apply from: 'https://raw.githubusercontent.com/Commit451/gradle-android-javadocs/1.0.0/gradle-android-javadocs.gradle'

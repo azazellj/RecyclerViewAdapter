@@ -24,7 +24,7 @@ class BindingViewHolder
      * @param <T> holder binding class
      * @return binding
      */
-    fun <T : ViewDataBinding> getView(): T {
+    fun <T : ViewDataBinding> getView(): T? {
         return DataBindingUtil.getBinding(itemView)
     }
 
