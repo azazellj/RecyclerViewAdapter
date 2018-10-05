@@ -130,6 +130,19 @@ abstract class BaseAdapter<E : Any, VH : AdapterViewHolder> : RecyclerView.Adapt
     }
 
     /**
+     * Update item at some position.
+     *
+     * @param item item to update
+     * @param position update index
+     */
+    fun setItemAt(@Nullable item: E, position: Int) {
+        if (position < 0 || position >= itemCount) {
+            return
+        }
+
+        mList[position] = item
+    }
+    /**
      * Rewrite collection.
      *
      * @param items new collection

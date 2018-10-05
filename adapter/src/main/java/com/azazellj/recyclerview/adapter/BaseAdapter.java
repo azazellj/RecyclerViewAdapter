@@ -144,6 +144,20 @@ public abstract class BaseAdapter<E, VH extends AdapterViewHolder>
     }
 
     /**
+     * Update item at some position.
+     *
+     * @param item item to update
+     * @param position update index
+     */
+    public void setItemAt(E item, final int position) {
+        if (position < 0 || position >= getItemCount()) {
+            return;
+        }
+
+        mList.set(position, item);
+    }
+
+    /**
      * Rewrite collection.
      *
      * @param items new collection
