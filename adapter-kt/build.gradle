@@ -13,9 +13,9 @@ android {
 }
 
 dependencies {
-    implementation "com.android.support:recyclerview-v7:$supportLibVersion"
+    implementation "com.android.support:recyclerview-v7:${rootProject.ext.supportLibVersion}"
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${rootProject.ext.kotlinVersion}"
 }
 
 apply from: 'https://raw.githubusercontent.com/Commit451/gradle-android-javadocs/1.0.0/gradle-android-javadocs.gradle'

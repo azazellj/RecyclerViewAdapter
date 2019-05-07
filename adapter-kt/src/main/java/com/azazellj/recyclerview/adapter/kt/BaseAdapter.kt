@@ -30,31 +30,31 @@ abstract class BaseAdapter<E : Any, VH : AdapterViewHolder> : RecyclerView.Adapt
     abstract override fun onBindViewHolder(holder: VH, position: Int)
 
     /**
+     * Check if range is invalid
+     * @return true, if invalid index
+     */
+    fun isInvalid(index: Int) = index < 0 || index >= itemCount
+
+    /**
      * Get items count
      *
      * @return number of items.
      */
-    override fun getItemCount(): Int {
-        return mList.size
-    }
+    override fun getItemCount() = mList.size
 
     /**
      * Get all items list.
      *
      * @return items
      */
-    fun getItems(): List<E> {
-        return mList
-    }
+    fun getItems(): List<E> = mList
 
     /**
      * Add new item
      *
      * @param item item to add
      */
-    fun add(item: E) {
-        add(item, itemCount)
-    }
+    fun add(item: E) = add(item, itemCount - 1)
 
     /**
      * Add new item at index.
@@ -64,7 +64,7 @@ abstract class BaseAdapter<E : Any, VH : AdapterViewHolder> : RecyclerView.Adapt
      */
     fun add(item: E, index: Int) {
         mList.add(index, item)
-        notifyItemInserted(itemCount - 1)
+        notifyItemInserted(index)
     }
 
     /**
@@ -72,9 +72,7 @@ abstract class BaseAdapter<E : Any, VH : AdapterViewHolder> : RecyclerView.Adapt
      *
      * @param items collection
      */
-    fun addAll(items: MutableList<E>) {
-        addAll(items, itemCount)
-    }
+    fun addAll(items: MutableList<E>) = addAll(items, itemCount - 1)
 
     /**
      * Add collection of items at index.
@@ -82,9 +80,9 @@ abstract class BaseAdapter<E : Any, VH : AdapterViewHolder> : RecyclerView.Adapt
      * @param items collection
      * @param index start index
      */
-    fun addAll(items: MutableList<E>, index: Int) {
+    fun <T : E, L : List<T>> addAll(items: L, index: Int) {
         var startIndex = index
-        if (index < 0 || index >= itemCount) {
+        if (isInvalid(index)) {
             startIndex = itemCount
         }
 
@@ -101,47 +99,41 @@ abstract class BaseAdapter<E : Any, VH : AdapterViewHolder> : RecyclerView.Adapt
     }
 
     /**
-     * Remove item at some position.
+     * Remove item at some index.
      *
-     * @param position remove index
+     * @param index remove index
      */
-    fun deleteItemAt(position: Int) {
-        if (position < 0 || position >= itemCount) {
-            return
-        }
+    fun deleteItemAt(index: Int) {
+        if (isInvalid(index)) return
 
-        mList.removeAt(position)
-        notifyItemRemoved(position)
+        mList.removeAt(index)
+        notifyItemRemoved(index)
     }
 
     /**
-     * Get item at some position.
+     * Get item at some index.
      *
-     * @param position index
+     * @param index index
      * @return null or item
      */
     @Nullable
-    fun getItem(position: Int): E? {
-        return if (position < 0 || position >= itemCount) {
-            null
-        } else {
-            mList[position]
-        }
+    fun getItem(index: Int): E? = when {
+        isInvalid(index) -> null
+        else -> mList[index]
     }
 
     /**
-     * Update item at some position.
+     * Update item at some index.
      *
      * @param item item to update
-     * @param position update index
+     * @param index update index
      */
-    fun setItemAt(@Nullable item: E, position: Int) {
-        if (position < 0 || position >= itemCount) {
-            return
-        }
+    fun setItemAt(@Nullable item: E, index: Int) {
+        if (isInvalid(index)) return
 
-        mList[position] = item
+        mList[index] = item
     }
+
     /**
      * Rewrite collection.
      *
@@ -157,7 +149,5 @@ abstract class BaseAdapter<E : Any, VH : AdapterViewHolder> : RecyclerView.Adapt
      *
      * @return true if empty
      */
-    fun isEmpty(): Boolean {
-        return mList.isEmpty()
-    }
+    fun isEmpty(): Boolean = mList.isEmpty()
 }
