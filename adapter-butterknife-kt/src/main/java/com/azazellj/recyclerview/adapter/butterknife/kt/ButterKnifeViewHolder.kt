@@ -6,7 +6,7 @@ import butterknife.ButterKnife
 /**
  * Created by azazellj on 3/7/18.
  */
-class ButterKnifeViewHolder
+open class ButterKnifeViewHolder
 /**
  * Default constructor.
  *
