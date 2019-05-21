@@ -47,7 +47,7 @@ abstract class BaseAdapter<E : Any, VH : AdapterViewHolder> : RecyclerView.Adapt
      *
      * @return items
      */
-    fun getItems(): List<E> = mList
+    fun getItems(): MutableList<E> = mList
 
     /**
      * Add new item
