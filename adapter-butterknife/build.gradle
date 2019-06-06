@@ -2,6 +2,13 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 group = 'com.github.Azazellj'
 
+buildscript {
+    if (!rootProject.ext.has('butterknifeVersion')) {
+        println("Using gefault version of ButterKnife: 8.1.1.")
+        println("Use rootProject.ext.butterknifeVersion if you want to change it.")
+        rootProject.ext.butterknifeVersion = '8.8.1'
+    }
+}
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -16,9 +23,9 @@ dependencies {
     implementation project(':adapter')
 
     implementation "com.android.support:recyclerview-v7:${rootProject.ext.supportLibVersion}"
-    implementation 'com.jakewharton:butterknife:8.8.1'
+    implementation "com.jakewharton:butterknife:${rootProject.ext.butterknifeVersion}"
 
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.ext.butterknifeVersion}"
 }
 
 apply from: 'https://raw.githubusercontent.com/Commit451/gradle-android-javadocs/1.0.0/gradle-android-javadocs.gradle'

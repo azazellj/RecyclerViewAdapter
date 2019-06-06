@@ -24,4 +24,5 @@ ext {
     minSdkVersion = 15
     kotlinVersion = '1.3.21'
     gradleVersion = '3.3.2'
+    butterknifeVersion = '10.1.0'
 }
