@@ -4,10 +4,12 @@ group = 'com.github.Azazellj'
 
 buildscript {
     if (!rootProject.ext.has('butterknifeVersion')) {
-        println("Using gefault version of ButterKnife: 8.1.1.")
+        println("Using default version of ButterKnife: 8.1.1.")
         println("Use rootProject.ext.butterknifeVersion if you want to change it.")
         rootProject.ext.butterknifeVersion = '8.8.1'
     }
+
+    println("Using version of ButterKnife: ${rootProject.ext.butterknifeVersion}")
 }
 
 android {
@@ -23,7 +25,7 @@ dependencies {
     implementation project(':adapter')
 
     implementation "com.android.support:recyclerview-v7:${rootProject.ext.supportLibVersion}"
-    implementation "com.jakewharton:butterknife:${rootProject.ext.butterknifeVersion}"
+    api "com.jakewharton:butterknife:${rootProject.ext.butterknifeVersion}"
 
     annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.ext.butterknifeVersion}"
 }

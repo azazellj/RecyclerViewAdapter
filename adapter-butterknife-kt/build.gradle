@@ -6,10 +6,12 @@ group = 'com.github.Azazellj'
 
 buildscript {
     if (!rootProject.ext.has('butterknifeVersion')) {
-        println("Using gefault version of ButterKnife: 8.1.1.")
+        println("Using default version of ButterKnife: 8.1.1.")
         println("Use rootProject.ext.butterknifeVersion if you want to change it.")
         rootProject.ext.butterknifeVersion = '8.8.1'
     }
+
+    println("Using version of ButterKnife: ${rootProject.ext.butterknifeVersion}")
 }
 
 android {
@@ -25,11 +27,11 @@ dependencies {
     implementation project(':adapter-kt')
 
     implementation "com.android.support:recyclerview-v7:${rootProject.ext.supportLibVersion}"
-    implementation 'com.jakewharton:butterknife:8.8.1'
+    api "com.jakewharton:butterknife:${rootProject.ext.butterknifeVersion}"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${rootProject.ext.kotlinVersion}"
 
-    kapt 'com.jakewharton:butterknife-compiler:8.8.1'
+    kapt "com.jakewharton:butterknife-compiler:${rootProject.ext.butterknifeVersion}"
 }
 
 apply from: 'https://raw.githubusercontent.com/Commit451/gradle-android-javadocs/1.0.0/gradle-android-javadocs.gradle'
