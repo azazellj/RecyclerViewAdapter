@@ -1,8 +1,10 @@
 package com.azazellj.baservadapter.databinding;
 
-import android.databinding.BindingAdapter;
 import android.util.Log;
 import android.widget.ImageView;
+
+import androidx.databinding.BindingAdapter;
+
 import com.azazellj.baservadapter.BuildConfig;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;

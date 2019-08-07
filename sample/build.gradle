@@ -17,6 +17,11 @@ android {
     lintOptions {
         abortOnError true
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -26,7 +31,8 @@ dependencies {
     implementation project(':adapter-binding-kt')
     implementation project(':adapter-butterknife')
     implementation project(':adapter-butterknife-kt')
-    implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
-    implementation "com.android.support:recyclerview-v7:${rootProject.ext.supportLibVersion}"
-    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    implementation "androidx.appcompat:appcompat:${rootProject.ext.compatVersion}"
+    implementation "androidx.recyclerview:recyclerview:${rootProject.ext.recyclerVersion}"
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 }

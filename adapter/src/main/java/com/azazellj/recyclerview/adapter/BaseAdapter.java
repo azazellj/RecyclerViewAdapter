@@ -1,9 +1,11 @@
 package com.azazellj.recyclerview.adapter;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.azazellj.recyclerview.adapter.common.AdapterViewHolder;
 
 import java.util.ArrayList;
@@ -146,7 +148,7 @@ public abstract class BaseAdapter<E, VH extends AdapterViewHolder>
     /**
      * Update item at some position.
      *
-     * @param item item to update
+     * @param item     item to update
      * @param position update index
      */
     public void setItemAt(E item, final int position) {

@@ -1,10 +1,11 @@
 package com.azazellj.recyclerview.adapter.binding;
 
-import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ViewDataBinding;
 
 /**
  * Created by azazellj on 10/2/17.

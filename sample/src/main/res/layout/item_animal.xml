@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp">
 
-        <android.support.v7.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/image_animal_image"
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -22,7 +22,7 @@
             app:imageUrl="@{animal.imageURL}"
             tools:src="@mipmap/ic_launcher" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/text_animal_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -1,7 +1,8 @@
 package com.azazellj.recyclerview.adapter.butterknife;
 
-import android.support.annotation.NonNull;
 import android.view.View;
+
+import androidx.annotation.NonNull;
 
 import butterknife.ButterKnife;
 

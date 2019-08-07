@@ -19,13 +19,18 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.compileSdkVersion
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     implementation project(':adapter')
 
-    implementation "com.android.support:recyclerview-v7:${rootProject.ext.supportLibVersion}"
-    api "com.jakewharton:butterknife:${rootProject.ext.butterknifeVersion}"
+    implementation "androidx.recyclerview:recyclerview:${rootProject.ext.recyclerVersion}"
+    implementation "com.jakewharton:butterknife:${rootProject.ext.butterknifeVersion}"
 
     annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.ext.butterknifeVersion}"
 }
