@@ -72,7 +72,7 @@ abstract class BaseAdapter<E : Any, VH : AdapterViewHolder> : RecyclerView.Adapt
      *
      * @param items collection
      */
-    fun addAll(items: MutableList<E>) = addAll(items, itemCount - 1)
+    fun addAll(items: List<E>) = addAll(items, itemCount - 1)
 
     /**
      * Add collection of items at index.
@@ -139,8 +139,8 @@ abstract class BaseAdapter<E : Any, VH : AdapterViewHolder> : RecyclerView.Adapt
      *
      * @param items new collection
      */
-    fun setItems(@Nullable items: MutableList<E>?) {
-        mList = items ?: mutableListOf()
+    fun setItems(@Nullable items: List<E>?) {
+        mList = items?.toMutableList() ?: mutableListOf()
         notifyDataSetChanged()
     }
 
