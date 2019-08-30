@@ -54,7 +54,7 @@ abstract class BaseAdapter<E : Any, VH : AdapterViewHolder> : RecyclerView.Adapt
      *
      * @param item item to add
      */
-    fun add(item: E) = add(item, itemCount - 1)
+    fun add(item: E) = add(item, itemCount)
 
     /**
      * Add new item at index.
@@ -72,7 +72,7 @@ abstract class BaseAdapter<E : Any, VH : AdapterViewHolder> : RecyclerView.Adapt
      *
      * @param items collection
      */
-    fun addAll(items: List<E>) = addAll(items, itemCount - 1)
+    fun addAll(items: List<E>) = addAll(items, itemCount)
 
     /**
      * Add collection of items at index.
