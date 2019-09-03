@@ -1,7 +1,0 @@
-include 'adapter'
-include 'adapter-kt'
-include 'adapter-binding'
-include 'adapter-binding-kt'
-include 'adapter-butterknife'
-include 'adapter-butterknife-kt'
-include 'sample'
