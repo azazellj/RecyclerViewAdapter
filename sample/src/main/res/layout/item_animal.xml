@@ -29,7 +29,6 @@
             android:layout_gravity="center_vertical"
             android:layout_margin="16dp"
             android:text="@{animal.name}"
-            android:textColor="?attr/titleTextColor"
             tools:text="@string/app_name" />
     </LinearLayout>
 </layout>

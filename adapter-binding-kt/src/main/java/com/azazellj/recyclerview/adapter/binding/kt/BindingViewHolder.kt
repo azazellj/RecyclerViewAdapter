@@ -38,7 +38,7 @@ class BindingViewHolder
         }
 
         fun getView(inflater: LayoutInflater, layoutId: Int, parent: ViewGroup, attachToParent: Boolean): View {
-            return DataBindingUtil.inflate<ViewDataBinding>(inflater, layoutId, parent, false).root
+            return DataBindingUtil.inflate<ViewDataBinding>(inflater, layoutId, parent, attachToParent).root
         }
     }
 }

@@ -3,6 +3,7 @@ private object LibraryVersion {
     const val RECYCLER_VIEW     = "1.0.0"
     const val BUTTERKNIFE       = "10.1.0"
     const val GLIDE             = "4.9.0"
+    const val ANNOTATION        = "1.1.0"
 }
 
 object LibraryDependency {
@@ -14,4 +15,5 @@ object LibraryDependency {
     const val BUTTERKNIFE_COMPILER  = "com.jakewharton:butterknife-compiler:${LibraryVersion.BUTTERKNIFE}"
     const val GLIDE                 = "com.github.bumptech.glide:glide:${LibraryVersion.GLIDE}"
     const val GLIDE_COMPILER        = "com.github.bumptech.glide:compiler:${LibraryVersion.GLIDE}"
+    const val ANNOTATION            = "androidx.annotation:annotation:${LibraryVersion.ANNOTATION}"
 }

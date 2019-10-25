@@ -20,10 +20,11 @@ configure<LibraryExtension> {
 
 dependencies {
     implementation(project(ModuleDependency.ADAPTER_KT))
+    implementation(project(ModuleDependency.ADAPTER_COMMON))
 
     implementation(LibraryDependency.RECYCLER_VIEW)
-    api(LibraryDependency.BUTTERKNIFE)
-
+    implementation(LibraryDependency.ANNOTATION)
+    implementation(LibraryDependency.BUTTERKNIFE)
     implementation(LibraryDependency.KOTLIN)
 
     kapt(LibraryDependency.BUTTERKNIFE_COMPILER)

@@ -13,10 +13,15 @@ configure<LibraryExtension> {
     defaultConfig {
         minSdkVersion(AndroidConfig.MIN_SDK_VERSION)
         targetSdkVersion(AndroidConfig.TARGET_SDK_VERSION)
+
+        testInstrumentationRunner = AndroidConfig.TEST_INSTRUMENTATION_RUNNER
     }
 }
 
 dependencies {
+    implementation(project(ModuleDependency.ADAPTER_COMMON))
+
+    implementation(LibraryDependency.ANNOTATION)
     implementation(LibraryDependency.RECYCLER_VIEW)
 }
 

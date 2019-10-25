@@ -21,6 +21,7 @@ configure<LibraryExtension> {
 
 dependencies {
     implementation(project(ModuleDependency.ADAPTER))
+    implementation(project(ModuleDependency.ADAPTER_COMMON))
 
     implementation(LibraryDependency.RECYCLER_VIEW)
     implementation(LibraryDependency.APP_COMPACT)

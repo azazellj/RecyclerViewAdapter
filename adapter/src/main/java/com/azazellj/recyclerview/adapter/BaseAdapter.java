@@ -1,12 +1,11 @@
 package com.azazellj.recyclerview.adapter;
 
-import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.azazellj.recyclerview.adapter.common.AdapterViewHolder;
+import com.azazellj.recyclerview.adapter.common.Holder;
+import com.azazellj.recyclerview.adapter.common.IBaseAdapter;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,82 +20,40 @@ import java.util.List;
  * @param <E>  entity
  * @param <VH> holder
  */
-public abstract class BaseAdapter<E, VH extends AdapterViewHolder>
-        extends RecyclerView.Adapter<VH> {
+public abstract class BaseAdapter<E, VH extends RecyclerView.ViewHolder>
+        extends RecyclerView.Adapter<VH>
+        implements IBaseAdapter<E, VH> {
 
-    public static final int NO_POSITION = RecyclerView.NO_POSITION;
-    /**
-     * Base container.
-     */
     @NonNull
     private List<E> mList = new ArrayList<>();
 
-    /**
-     * Default constructor.
-     */
-    public BaseAdapter() {
-    }
-
-    @Override
-    public abstract VH onCreateViewHolder(ViewGroup parent, int viewType);
-
-    @Override
-    public abstract void onBindViewHolder(VH holder, int position);
-
-    /**
-     * Get items count
-     *
-     * @return number of items.
-     */
     @Override
     public int getItemCount() {
         return mList.size();
     }
 
-    /**
-     * Get all items list.
-     *
-     * @return items
-     */
+    @Override
     public List<E> getItems() {
         return mList;
     }
 
-    /**
-     * Add new item
-     *
-     * @param item item to add
-     */
+    @Override
     public void add(final E item) {
         add(item, getItemCount());
     }
 
-    /**
-     * Add new item at index.
-     *
-     * @param item  item to add
-     * @param index insert index
-     */
+    @Override
     public void add(final E item, final int index) {
         mList.add(index, item);
         notifyItemInserted(getItemCount() - 1);
     }
 
-    /**
-     * Add collection of items
-     *
-     * @param items collection
-     */
+    @Override
     public void addAll(final List<? extends E> items) {
         addAll(items, getItemCount());
     }
 
-    /**
-     * Add collection of items at index.
-     *
-     * @param items collection
-     * @param index start index
-     */
+    @Override
     public void addAll(final List<? extends E> items, final int index) {
         int startIndex = index;
 
@@ -108,19 +65,13 @@ public abstract class BaseAdapter<E, VH extends AdapterViewHolder>
         notifyItemRangeInserted(startIndex, items.size());
     }
 
-    /**
-     * Remove all items.
-     */
+    @Override
     public void clear() {
         mList.clear();
         notifyDataSetChanged();
     }
 
-    /**
-     * Remove item at some position.
-     *
-     * @param position remove index
-     */
+    @Override
     public void deleteItemAt(final int position) {
         if (position < 0 || position >= getItemCount()) {
             return;
@@ -130,12 +81,7 @@ public abstract class BaseAdapter<E, VH extends AdapterViewHolder>
         notifyItemRemoved(position);
     }
 
-    /**
-     * Get item at some position.
-     *
-     * @param position index
-     * @return null or item
-     */
+    @Override
     @Nullable
     public E getItem(final int position) {
         if (position < 0 || position >= getItemCount()) {
@@ -145,12 +91,7 @@ public abstract class BaseAdapter<E, VH extends AdapterViewHolder>
         return mList.get(position);
     }
 
-    /**
-     * Update item at some position.
-     *
-     * @param item     item to update
-     * @param position update index
-     */
+    @Override
     public void setItemAt(E item, final int position) {
         if (position < 0 || position >= getItemCount()) {
             return;
@@ -159,11 +100,7 @@ public abstract class BaseAdapter<E, VH extends AdapterViewHolder>
         mList.set(position, item);
     }
 
-    /**
-     * Rewrite collection.
-     *
-     * @param items new collection
-     */
+    @Override
     public void setItems(@Nullable List<E> items) {
         if (items == null) {
             items = Collections.emptyList();
@@ -173,11 +110,7 @@ public abstract class BaseAdapter<E, VH extends AdapterViewHolder>
         notifyDataSetChanged();
     }
 
-    /**
-     * Check if is collection empty.
-     *
-     * @return true if empty
-     */
+    @Override
     public boolean isEmpty() {
         return mList.isEmpty();
     }

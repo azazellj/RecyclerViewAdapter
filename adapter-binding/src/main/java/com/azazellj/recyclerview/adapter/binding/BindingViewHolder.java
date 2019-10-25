@@ -46,6 +46,6 @@ public class BindingViewHolder
 
     public static View getView(LayoutInflater inflater, int layoutId, ViewGroup parent,
                                boolean attachToParent) {
-        return DataBindingUtil.inflate(inflater, layoutId, parent, false).getRoot();
+        return DataBindingUtil.inflate(inflater, layoutId, parent, attachToParent).getRoot();
     }
 }

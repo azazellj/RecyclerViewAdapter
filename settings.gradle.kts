@@ -3,6 +3,7 @@ rootProject.buildFileName = "build.gradle.kts"
 include(
     ModuleDependency.SAMPLE,
     ModuleDependency.ADAPTER,
+    ModuleDependency.ADAPTER_COMMON,
     ModuleDependency.ADAPTER_KT,
     ModuleDependency.ADAPTER_BINDING,
     ModuleDependency.ADAPTER_BINDING_KT,
