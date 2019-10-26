@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.azazellj.recyclerview.adapter.common.Holder;
 import com.azazellj.recyclerview.adapter.common.IBaseAdapter;
 
 import java.util.ArrayList;
