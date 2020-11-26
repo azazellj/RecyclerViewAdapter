@@ -9,7 +9,7 @@ import androidx.databinding.ViewDataBinding
 /**
  * Created by azazellj on 3/7/18.
  */
-class BindingViewHolder
+open class BindingViewHolder
 /**
  * Default constructor.
  *
